@@ -38,13 +38,13 @@ namespace Books.API
             var connectionString = Configuration["ConnectionStrings:BooksDBConnectionString"];
             services.AddDbContext<BooksContext>(o => o.UseSqlServer(connectionString));
             services.AddScoped<IBookRepository, BookRepository>();
-            //services.AddAutoMapper();
-            var config = new AutoMapper.MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new BooksProfile());
-            });
-            var mapper = config.CreateMapper();
-            services.AddSingleton(mapper);
+            services.AddAutoMapper();
+            //var config = new AutoMapper.MapperConfiguration(cfg =>
+            //{
+            //    cfg.AddProfile(new BooksProfile());
+            //});
+            //var mapper = config.CreateMapper();
+            //services.AddSingleton(mapper);
         }
     
 
