@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Books.API.Contexts;
 using Books.API.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -18,12 +20,14 @@ namespace Books.API.Services
 
         public async Task<Book> GetBookByIdAsync(Guid Id)
         {
-            return await _booksContext.Books.Include(b => b.Author).FirstOrDefaultAsync(b => b.Id == Id);
+            return await _booksContext.Books.Include(b => b.Author)
+                .FirstOrDefaultAsync(b => b.Id == Id);
         }
 
         public async Task<IEnumerable<Book>> GetBooksAsync()
         {
-            return await _booksContext.Books.Include(b => b.Author).ToListAsync();
+            return await _booksContext.Books
+                 .Include(b => b.Author).ToListAsync();
         }
     }
 }
