@@ -39,6 +39,9 @@ namespace Books.API.Controllers
             var book = await _bookRepo.GetBookByIdAsync(id);
             if (book == null) 
                 return NotFound();
+            // getting bookcover from external API
+            var bookCover = _bookRepo.GetBookCoverByIdAsync("dummycover");
+
             //return Ok(book);
             return Ok(_mapper.Map<ModelsDTO.Book>(book));
         }

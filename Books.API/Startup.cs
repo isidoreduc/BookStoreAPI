@@ -45,6 +45,7 @@ namespace Books.API
             //});
             //var mapper = config.CreateMapper();
             //services.AddSingleton(mapper);
+            services.AddHttpClient();
         }
     
 

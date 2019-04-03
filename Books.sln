@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.API", "Books.API\Books.API.csproj", "{880EF902-0A9A-4F3E-9367-2E1779EBF69F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Api", "..\..\Downloads\building-async-api-aspdotnet-core\04\demos\end\Books\Books.Api\Books.Api.csproj", "{F962480E-1402-4C70-834D-073C3C06A893}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCovers.API", "..\..\Desktop\Projects Repo\kevin docks -building-async-api-aspdotnet-core 2.1\06\demos\start\Books\BookCovers.API\BookCovers.API.csproj", "{DBC42254-62E2-4EC3-B982-B13C8E907B59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,11 +13,11 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{880EF902-0A9A-4F3E-9367-2E1779EBF69F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{880EF902-0A9A-4F3E-9367-2E1779EBF69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{880EF902-0A9A-4F3E-9367-2E1779EBF69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{880EF902-0A9A-4F3E-9367-2E1779EBF69F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F962480E-1402-4C70-834D-073C3C06A893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F962480E-1402-4C70-834D-073C3C06A893}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F962480E-1402-4C70-834D-073C3C06A893}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F962480E-1402-4C70-834D-073C3C06A893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{880EF902-0A9A-4F3E-9367-2E1779EBF69F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{880EF902-0A9A-4F3E-9367-2E1779EBF69F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DBC42254-62E2-4EC3-B982-B13C8E907B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC42254-62E2-4EC3-B982-B13C8E907B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC42254-62E2-4EC3-B982-B13C8E907B59}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC42254-62E2-4EC3-B982-B13C8E907B59}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
