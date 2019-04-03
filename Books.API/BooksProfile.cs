@@ -12,6 +12,8 @@ namespace Books.API
             CreateMap<Entities.Book, ModelsDTO.Book>().
                 ForMember(destinationMember => destinationMember.Author, memberOptions =>
                     memberOptions.MapFrom(source => $"{source.Author.FirstName} {source.Author.LastName}"));
+
+            CreateMap<ModelsDTO.BookForHttpPost, Entities.Book>();
         }
 
     }

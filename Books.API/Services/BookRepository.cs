@@ -13,21 +13,26 @@ namespace Books.API.Services
     {
         private BooksContext _booksContext;
 
-        public BookRepository(BooksContext booksContext)
-        {
+        public BookRepository(BooksContext booksContext) =>
             _booksContext = booksContext;
-        }
 
-        public async Task<Book> GetBookByIdAsync(Guid Id)
-        {
-            return await _booksContext.Books.Include(b => b.Author)
-                .FirstOrDefaultAsync(b => b.Id == Id);
-        }
+        public async Task<Book> GetBookByIdAsync(Guid Id) =>
+            await _booksContext.Books.Include(b => b.Author).FirstOrDefaultAsync(b => b.Id == Id);
 
-        public async Task<IEnumerable<Book>> GetBooksAsync()
+        public async Task<IEnumerable<Book>> GetBooksAsync() =>
+            await _booksContext.Books.Include(b => b.Author).ToListAsync();
+
+        // no sense to make it async, as there is no wire communication with database, it is just added to DbSet in the context
+        public void CreateBook(Book book)
         {
-            return await _booksContext.Books
-                 .Include(b => b.Author).ToListAsync();
+            if (book == null) throw new ArgumentNullException(nameof(book));
+            _booksContext.Add(book);
         }
+               
+        // we want to persist the changes made to context (adding a book for example), so this is 
+        // database interaction, so async makes sense
+        public async Task<bool> SaveChangesAsync() => 
+            await _booksContext.SaveChangesAsync() > 0; // if at least one change
+
     }
 }

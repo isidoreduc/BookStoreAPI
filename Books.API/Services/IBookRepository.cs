@@ -15,5 +15,7 @@ namespace Books.API.Services
         // asynchronous
         Task<IEnumerable<Book>> GetBooksAsync();
         Task<Book> GetBookByIdAsync(Guid Id);
+        void CreateBook(Book book);
+        Task<bool> SaveChangesAsync();
     }
 }
